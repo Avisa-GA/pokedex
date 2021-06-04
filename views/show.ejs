@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+</head>
+
+<body>
+    <div class="container">
+        <button><a href="/pokemon">Back</a></button>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td><%= pokemon.name%></td>
+                <td>
+                    <img src="<%= pokemon.img%>" alt="pokemon image">
+                </td>
+            </tr>
+            <tr>
+                <th>Type</th>
+
+                <% for (let i = 0; i < pokemon.type.length; i++) { %>
+                <td><%= pokemon.type[i]%></td>
+                <% } %>
+
+            </tr>
+            <tr>
+                <th>Stats</th>
+                <% for (let key in pokemon.stats) {%>
+                <td><%= key%>: <%= pokemon.stats[key]%> </td>
+                <%}%>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+
+</html>

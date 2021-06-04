@@ -1,0 +1,26 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('./partials/head.ejs') %>
+</head>
+<body>
+    <div class='container'>
+    <h1>Home Page</h1>
+    <ul>
+        <% for(let i = 0; i < allPokemon.length; i++) { %>
+            <li>
+               <a href="/pokemon/<%= i %>"> 
+                <img src="<%= allPokemon[i].img%>" alt="pokemon image">
+            </a>
+            </li>
+            <!-- DELETE ADD HERE -->
+          
+            <% } %>
+    </ul>
+    <!-- <button><a href="/planet/new">Add New Scientist</a></button> -->
+</div>
+</body>
+</html>
