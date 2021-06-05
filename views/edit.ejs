@@ -13,12 +13,18 @@
         <div class="row">
             <div class="six columns">
                 <label for="name">Name</label>
-                <input class="u-full-width" type="text" name="name" placeholder="enter pokemon name" value="<%= pokemon.name%>">
+                <input class="u-full-width" type="text" name="name" placeholder="enter pokemon name" value="<%= name%>">
             </div>
             <div class="six columns">
-                <label for="image">Iamge</label>
+                <label for="image">Image</label>
                 <input class="u-full-width" type="file" name="img" placeholder="upload image"
-                    accept="image/png, image/jpg" value="<%= pokemon.img%>">
+                    accept="image/png, image/jpg" value="<%= img%>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="six columns">
+                <label for="type">Type</label>
+                <input class="u-full-width" type="text" name="type" placeholder="enter type" value="<%= type%>">
             </div>
         </div>
         <!-- STATS TABLE ENTRY -->
@@ -32,36 +38,36 @@
 
                 <tr>
                     <td>
-                        <input type="text" placeholder="enter hp" name="hp" value="<%= pokemon.hp%>">
+                        <input type="text" placeholder="enter hp" name="hp" value="<%= hp%>">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" placeholder="enter attack" name="attack" value="<%= pokemon.attack%>">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <input type="text" placeholder="enter defence" name="defence" value="<%= pokemon.defence%>">
+                        <input type="text" placeholder="enter attack" name="attack" value="<%= attack%>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <input type="text" placeholder="enter spattack" name="spattack" value="<%= pokemon.spattack%>">
+                        <input type="text" placeholder="enter defence" name="defense" value="<%= defense%>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <input type="text" placeholder="enter spdefense" name="spdefense" value="<%= pokemon.spdefense%>">
+                        <input type="text" placeholder="enter spattack" name="spattack" value="<%= spattack%>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <input type="text" placeholder="enter speed" name="speed" value="<%= pokemon.speed%>">
+                        <input type="text" placeholder="enter spdefense" name="spdefense" value="<%= spdefense%>">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="text" placeholder="enter speed" name="speed" value="<%= speed%>">
                     </td>
                 </tr>
 
