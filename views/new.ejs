@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+</head>
+
+<body>
+    <div class="container">
+        <form action='/pokemon' method="POST">
+            <input type="text" placeholder="Enter your name" name="name"><br />
+            <input type="file" name="img" accept="image/png, image/jpg"><br />
+            <input type="text" placeholder="Enter type here" name="type">
+            <br>
+            <div>
+                <label>Stats</label>
+                <input type="text" placeholder="hp" name="hp">
+                <input type="text" placeholder="attack" name="attack">
+                <input type="text" placeholder="defence" name="defence">
+                <input type="text" placeholder="spattack" name="spattack">
+                <input type="text" placeholder="spdefense" name="spdefense">
+                <input type="text" placeholder="speed" name="speed">
+            </div>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+</body>
+
+</html>

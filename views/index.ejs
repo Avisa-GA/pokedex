@@ -17,10 +17,15 @@
             </a>
             </li>
             <!-- DELETE ADD HERE -->
+            <form action="/pokemon/<%= i %>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE"/>
+            </form>
+            <button><a href="/pokemon/<%= i %>/edit">EDIT</a></button>
           
             <% } %>
     </ul>
-    <!-- <button><a href="/planet/new">Add New Scientist</a></button> -->
+    <button><a href="/pokemon/new">Add New Scientist</a></button>
 </div>
+<% console.log(allPokemon[allPokemon.length - 1]) %>
 </body>
 </html>
