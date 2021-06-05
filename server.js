@@ -1,4 +1,3 @@
-
 // IMPORT EXPRESS
 const express = require('express')
 const app = express()
@@ -7,7 +6,9 @@ const methodOverride = require('method-override')
 const path = require('path');
 
 // MIDDLEWARE
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({
+    extended: false
+}))
 app.use(express.json())
 app.use(methodOverride('_method'))
 app.use('/static', express.static(path.join(__dirname, 'public')))
@@ -34,24 +35,21 @@ app.get('/pokemon/new', (req, res) => {
 })
 
 // CREATE
-app.post('/pokemon' ,(req, res) => {
+app.post('/pokemon', (req, res) => {
 
-    
-    
-      pokemons.push({
-          'name': req.body.name,
-          'image': req.body.img,
-          'type': [req.body.type],
-          'stats': {
-            'hp': req.body.stats.hp,
-            'attack': req.body.stats.attack,
-            'defense': req.body.stats.defence
-            'spattack': req.body.stats.spattack,
-            'spdefense': req.body.stats.spdefense,
-            'speed': req.body.stats.speed
-          }
-      })
-      res.redirect('/pokemon')
+    pokemons.push({
+        'name': req.body.name,
+        'image': req.body.img,
+        'type': [req.body.type],
+        'hp': req.body.hp,
+        'attack': req.body.attack,
+        'defense': req.body.defence,
+        'spattack': req.body.spattack,
+        'spdefense': req.body.spdefense,
+        'speed': req.body.speed
+
+    })
+    res.redirect('/pokemon')
 })
 // SHOW
 app.get('/pokemon/:index', (req, res) => {

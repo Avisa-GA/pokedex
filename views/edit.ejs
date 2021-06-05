@@ -9,7 +9,7 @@
     <div class="headline">
         <h2 style="color:goldenrod">Pokemon Edit Page</h2>
     </div>
-    <form action="/pokemon<%= x %>?_method=PUT" method="POST">
+    <form action="/pokemon/<%= x%>?_method=PUT" method="POST">
         <div class="row">
             <div class="six columns">
                 <label for="name">Name</label>
@@ -61,7 +61,7 @@
 
                 <tr>
                     <td>
-                        <input type="text" placeholder="enter speed" name="speed" value="<% pokemon.speed%>">
+                        <input type="text" placeholder="enter speed" name="speed" value="<%= pokemon.speed%>">
                     </td>
                 </tr>
 
