@@ -36,18 +36,20 @@ app.get('/pokemon/new', (req, res) => {
 
 // CREATE
 app.post('/pokemon', (req, res) => {
-
+ 
     pokemons.push({
 
-        'name': req.body.name,
-        'image': req.body.img,
-        'type': [req.body.type],
-        'hp': req.body.hp,
-        'attack': req.body.attack,
-        'defense': req.body.defense,
-        'spattack': req.body.spattack,
-        'spdefense': req.body.spdefense,
-        'speed': req.body.speed
+        name: req.body.name,
+        image: req.body.img,
+        type: [req.body.type],
+        stats: {
+        hp: req.body.hp,
+        attack: req.body.attack,
+        defense: req.body.defense,
+        spattack: req.body.spattack,
+        spdefense: req.body.spdefense,
+        speed: req.body.speed
+        }
 
     })
     res.redirect('/pokemon')
@@ -74,9 +76,10 @@ app.get('/pokemon/:index/edit', (req, res) => {
         hp: pokemons[req.params.index].stats.hp,
         attack: pokemons[req.params.index].stats.attack,
         defense: pokemons[req.params.index].stats.defense,
-       spattack: pokemons[req.params.index].stats.spattack,
-       spdefense: pokemons[req.params.index].stats.spdefense,
-       speed: pokemons[req.params.index].stats.speed,
+        spattack: pokemons[req.params.index].stats.spattack,
+        spdefense: pokemons[req.params.index].stats.spdefense,
+        speed: pokemons[req.params.index].stats.speed,
+      
         x: req.params.index
     })
 })

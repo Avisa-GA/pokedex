@@ -6,14 +6,17 @@
 </head>
 
 <body>
+    <div class="headline">
+        <h2 style="color:teal">Pokemon Show Page</h2>
+        <a href="/pokemon" class="button" style="color:teal">Back</a>
+    </div>
     <div class="container">
-        <button><a href="/pokemon">Back</a></button>
         <table>
             <tr>
                 <th>Name</th>
                 <td><%= pokemon.name%></td>
                 <td>
-                    <img src="<%= pokemon.img%>" alt="pokemon image">
+                    <img src="<%= pokemon.img%>" alt="pokemon image" height='150' width='150'>
                 </td>
             </tr>
             <tr>
