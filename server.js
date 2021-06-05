@@ -4,11 +4,13 @@ const express = require('express')
 const app = express()
 const port = 3000
 const methodOverride = require('method-override')
+const path = require('path');
 
 // MIDDLEWARE
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 app.use(methodOverride('_method'))
+app.use('/static', express.static(path.join(__dirname, 'public')))
 
 // DATABASE
 const pokemons = require('./models/pokemon.js')
@@ -33,36 +35,20 @@ app.get('/pokemon/new', (req, res) => {
 
 // CREATE
 app.post('/pokemon' ,(req, res) => {
-     let name = req.body.name
-     let image = req.body.img
-     let type = req.body.type
-     let hp = req.body.hp
-     let attack = req.body.attack
-     let defence = req.body.defence
-     let spattack = req.body.spattack
-     let spdefense = req.body.spdefense
 
-     stats = {
-        'hp': req.body.hp,
-        'attack': req.body.attack,
-        'defense': defence,
-        'spattack': spattack,
-        'spdefense': spdefense,
-        'speed': speed
-     }
- 
+    
+    
       pokemons.push({
-          'name': name,
-          'image': image,
-          'type': [type],
+          'name': req.body.name,
+          'image': req.body.img,
+          'type': [req.body.type],
           'stats': {
-              'hp': hp,
-              'attack': attack,
-              'defense': defence,
-              'spattack': spattack,
-              'spdefense': spdefense,
-              'speed': speed
-              
+            'hp': req.body.stats.hp,
+            'attack': req.body.stats.attack,
+            'defense': req.body.stats.defence
+            'spattack': req.body.stats.spattack,
+            'spdefense': req.body.stats.spdefense,
+            'speed': req.body.stats.speed
           }
       })
       res.redirect('/pokemon')

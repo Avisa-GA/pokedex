@@ -7,15 +7,20 @@
     <%- include ('./partials/head.ejs') %>
 </head>
 <body>
+    <div class="headline">
+        <h1>Pokemon Home Page</h1>
+        <button><a href="/pokemon/new" class="btn btn-secondary">Add New Scientist</a></button>
+    </div>
     <div class='container'>
-    <h1>Home Page</h1>
-    <ul>
+    <table class="table">
+        <tbody>
+            <tr>
         <% for(let i = 0; i < allPokemon.length; i++) { %>
-            <li>
+                
+            <td>
                <a href="/pokemon/<%= i %>"> 
-                <img src="<%= allPokemon[i].img%>" alt="pokemon image">
+                <img src="<%= allPokemon[i].img%>" alt="pokemon image" width='100' height='100'>
             </a>
-            </li>
             <!-- DELETE ADD HERE -->
             <form action="/pokemon/<%= i %>?_method=DELETE" method="POST">
                 <input type="submit" value="DELETE"/>
@@ -23,8 +28,10 @@
             <button><a href="/pokemon/<%= i %>/edit">EDIT</a></button>
           
             <% } %>
-    </ul>
-    <button><a href="/pokemon/new">Add New Scientist</a></button>
+        </td>
+        </tr>
+</tbody>
+</table>
 </div>
 <% console.log(allPokemon[allPokemon.length - 1]) %>
 </body>
