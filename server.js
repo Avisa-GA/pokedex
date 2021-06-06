@@ -89,12 +89,12 @@ app.put('/pokemon/:index', (req, res) => {
     pokemons[req.params.index].name = req.body.name
     pokemons[req.params.index].img = req.body.img
     pokemons[req.params.index].type = req.body.type
-    pokemons[req.params.index].hp = req.body.hp
-    pokemons[req.params.index].attack = req.body.attack
-    pokemons[req.params.index].defence = req.body.defense
-    pokemons[req.params.index].spattack = req.body.spattack
-    pokemons[req.params.index].spdefense = req.body.spdefense
-    pokemons[req.params.index].speed = req.body.speed
+    pokemons[req.params.index].stats.hp = req.body.hp
+    pokemons[req.params.index].stats.attack = req.body.attack
+    pokemons[req.params.index].stats.defence = req.body.defense
+    pokemons[req.params.index].stats.spattack = req.body.spattack
+    pokemons[req.params.index].stats.spdefense = req.body.spdefense
+    pokemons[req.params.index].stats.speed = req.body.speed
     res.redirect('/pokemon')
 })
 
