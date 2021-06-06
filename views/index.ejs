@@ -11,10 +11,10 @@
         <button><a href="/pokemon/new" class="btn btn-secondary">Add New Pokemon</a></button>
     </div>
     <section>
-        <div class='container' id='one' style="display:grid grid-template-columns: 40px 50px auto 50px 40px">
-            <table class="table" style="table-layout: fixed">
+        <div id='one'>
+            <table class="table" id='indexPage'>
                 <tbody>
-                    <tr>
+                    <tr id='element'>
                         <% for(let i = 0; i < allPokemon.length; i++) { %>
 
                         <th id='element'>
@@ -23,7 +23,7 @@
                             </a>
                         </th>
                             <!-- DELETE ADD HERE -->
-                            <td height='100'>
+                            <td height='100' id='element'>
                             <form action="/pokemon/<%= i %>?_method=DELETE" method="POST" style="padding: 0">
                                 <input type="submit" value="DELETE" />
                             </form>

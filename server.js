@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 const methodOverride = require('method-override')
-const path = require('path');
+const path = require('path')
 
 // MIDDLEWARE
 app.use(express.urlencoded({
@@ -11,7 +11,7 @@ app.use(express.urlencoded({
 }))
 app.use(express.json())
 app.use(methodOverride('_method'))
-app.use('/static', express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')))
 
 // DATABASE
 const pokemons = require('./models/pokemon.js')
@@ -31,6 +31,7 @@ app.get('/pokemon', (req, res) => {
 
 // NEW
 app.get('/pokemon/new', (req, res) => {
+    res.sendFile(__dirname + 'new.ejs')
     res.render('new.ejs')
 })
 
@@ -53,6 +54,7 @@ app.post('/pokemon', (req, res) => {
 
     })
     res.redirect('/pokemon')
+
 })
 // SHOW
 app.get('/pokemon/:index', (req, res) => {
