@@ -22,8 +22,8 @@
                                 <img src="<%= allPokemon[i].img%>" alt="pokemon image" width='100' height='100'>
                             </a>
                         </th>
-                            <!-- DELETE ADD HERE -->
-                            <td height='100' id='element'>
+                        <!-- DELETE ADD HERE -->
+                        <td height='100' id='element'>
                             <form action="/pokemon/<%= i %>?_method=DELETE" method="POST" style="padding: 0">
                                 <input type="submit" value="DELETE" />
                             </form>
@@ -36,7 +36,6 @@
             </table>
         </div>
     </section>
-    <% console.log(allPokemon[allPokemon.length - 1]) %>
 </body>
 
 </html>
